@@ -15,6 +15,7 @@ Scanear la imagen
 ├── Creacion de repositorio para el PIN
 ├── Fork de repositorio de mundoSE
 ├── Instalacion de Ubuntu Server 22.04.4 LTS
+├── Credenciales ssh entre host y server
 ├── Instalacion de Docker y Docker Compose
 ├── Clonado de este repositorio
 ├── docker-compose up --build -d
