@@ -19,6 +19,7 @@ pipeline {
     stage('Building image') {
       steps{
           sh '''
+          cd PIN1
           docker build -t testapp .
              '''  
         }
