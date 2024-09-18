@@ -7,8 +7,8 @@ pipeline {
 
   environment {
     ARTIFACT_ID = "elbuo8/webapp:${env.BUILD_NUMBER}"
-    DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')
-    DOCKER_HUB_REPO = "manzana2164"
+    DOCKER_HUB_TOKEN = credentials('dockerhub-token') 
+    DOCKER_HUB_REPO = "manzana2164/devops"
   }
    stages {
    stage('Checkout') {
@@ -44,8 +44,7 @@ pipeline {
       steps {
         script {
           // Iniciar sesión en Docker Hub
-          sh "echo ${DOCKER_HUB_CREDENTIALS.PASSWORD} | docker login -u ${DOCKER_HUB_CREDENTIALS.USERNAME} --password-stdin"
-          
+          sh "echo ${DOCKER_HUB_TOKEN} | docker login --username manzana2164 --password-stdin"
           // Etiquetar la imagen para Docker Hub
           sh '''
             docker tag testapp ${DOCKER_HUB_REPO}:latest
@@ -57,7 +56,7 @@ pipeline {
 
    stage('Vulnerability Scan - Docker ') {
         steps {
-          sh "docker run  -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image --severity=critical 127.0.0.1:5000/mguazzardo/testapp"
+          sh "docker run  -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image --severity=CRITICAL 127.0.0.1:5000/mguazzardo/testapp"
             }
         }
     }
