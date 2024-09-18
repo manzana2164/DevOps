@@ -7,6 +7,23 @@ Correr un pipeline con ciertas customizaciones
 Crear una imagen y enviarla a nuestro registry propio
 Scanear la imagen
 
+## Flujo de Trabajo
+
+/PIN1
+│
+├── Creacion de repositorio para el PIN
+├── Fork de repositorio de mundoSE
+├── Instalacion de Ubuntu Server 22.04.4 LTS
+├── Instalacion de Docker y Docker Compose
+├── Clonado de este repositorio
+├── docker-compose up --build -d
+├── configuracion de Jenkins
+├── Corriendo el Pipeline por primera vez
+├── Analisis de errores
+├── Propuestas y soluciones desde Replay de Jenkins
+├── Nuevos commit en el repositorio una vez corregido los issues  
+└── Analisis y conclusiones
+
 ## Instalando Docker, Custom Jenkins, Pipelines, Registry propio
 
 ### Instalando Docker last version en Ubuntu Server 24.04.1
