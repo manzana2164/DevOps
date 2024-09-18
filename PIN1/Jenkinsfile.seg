@@ -7,6 +7,8 @@ pipeline {
 
   environment {
     ARTIFACT_ID = "elbuo8/webapp:${env.BUILD_NUMBER}"
+    DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')
+    DOCKER_HUB_REPO = "manzana2164"
   }
    stages {
    stage('Checkout') {
