@@ -9,7 +9,14 @@ pipeline {
     ARTIFACT_ID = "elbuo8/webapp:${env.BUILD_NUMBER}"
   }
    stages {
-   stage('Building image') {
+   stage('Checkout') {
+      steps {
+        // Realiza el checkout de la rama 'main'
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/manzana2164/DevOps.git']]])
+      }
+    }
+    
+    stage('Building image') {
       steps{
           sh '''
           cd webapp
