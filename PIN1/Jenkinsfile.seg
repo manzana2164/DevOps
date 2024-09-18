@@ -16,7 +16,7 @@ pipeline {
       }
     }
     
-    stage('Building image') {
+   stage('Building image') {
       steps{
           sh '''
           cd PIN1
@@ -24,9 +24,7 @@ pipeline {
              '''  
         }
     }
-  
-  
-    stage('Run tests') {
+   stage('Run tests') {
       steps {
         sh "docker run testapp npm test"
       }
@@ -39,7 +37,8 @@ pipeline {
         '''
         }
       }
-      stage('Deploy Image to Docker Hub') {
+      
+   stage('Deploy Image to Docker Hub') {
       steps {
         script {
           // Iniciar sesión en Docker Hub
