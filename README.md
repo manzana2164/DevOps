@@ -9,6 +9,7 @@ Scanear la imagen
 
 ## Flujo de Trabajo
 
+```bash
 /PIN1
 │
 ├── Creacion de repositorio para el PIN
@@ -21,8 +22,9 @@ Scanear la imagen
 ├── Corriendo el Pipeline por primera vez
 ├── Analisis de errores
 ├── Propuestas y soluciones desde Replay de Jenkins
-├── Nuevos commit en el repositorio una vez corregido los issues  
+├── Nuevos commit en el repositorio una vez corregido los issues
 └── Analisis y conclusiones
+```
 
 ## Instalando Docker, Custom Jenkins, Pipelines, Registry propio
 
@@ -56,6 +58,7 @@ docker.io/mguazzardo/pipe-seg
 
 ### Estructura de Archivos para Docker Compose
 
+```bash
 /PIN1
 │
 ├── docker-compose.yml
@@ -65,3 +68,4 @@ docker.io/mguazzardo/pipe-seg
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
